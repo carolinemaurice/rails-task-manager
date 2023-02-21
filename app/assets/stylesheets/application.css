@@ -13,3 +13,34 @@
  *= require_tree .
  *= require_self
  */
+
+ul {
+  list-style: none;
+}
+
+
+.taskContainer {
+  padding: 30px;
+}
+
+.taskBorder {
+  border: 2px solid lightgrey;
+}
+
+.taskBackground {
+  background-color: rgb(228, 226, 226);
+}
+
+.taskCard {
+  height: 60px;
+  padding: 20px;
+  margin: 10px 0px;
+}
+
+.taskPaddingX {
+  padding: 20px 0px;
+}
+
+.taskMarginX {
+  margin: 20px 0px;
+}

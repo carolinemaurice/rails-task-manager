@@ -2,14 +2,22 @@
 <ul>
   <% @tasks.each do |task| %>
     <li>
-      <%= task.completed %>
+      <% if task.completed == false %>
+        <i class="fa-regular fa-square"></i>
+      <% else %>
+        <i class="fa-regular fa-square-check"></i>
+      <% end %>
       <%= link_to task.title, task_path(task) %>
       <% delete_msg = "Delete #{task.title}?" %>
-      <%= link_to "Delete", task_path(task), data: {turbo_method: :delete, turbo_confirm: delete_msg} %>
+      <%= link_to(task_path(task), data: {turbo_method: :delete, turbo_confirm: delete_msg}) do %>
+        <i class="fa-solid fa-trash-can"></i>
+      <% end %>
     </li>
   <% end %>
 </ul>
 
-<p>
-  <%= link_to "+ Add a new task", new_task_path %>
+<p class="taskPaddingX">
+  <%= link_to(new_task_path) do %>
+    <span><i class="fa-solid fa-plus"></i>Add a new task</span>
+  <% end %>
 </p>

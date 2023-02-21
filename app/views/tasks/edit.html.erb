@@ -1,13 +1,7 @@
-<%= form_with model: @task do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :details %>
-  <%= f.text_field :details %>
-  <%= f.label :completed %>
-  <%= f.text_field :completed %>
-  <%= f.submit %>
-<% end %>
+<%= render "form", task: @task %>
 
-<p>
-  <%= link_to('Back to list', tasks_path) %>
+<p class="taskPaddingX">
+  <%= link_to(tasks_path) do %>
+    <span><i class="fa-solid fa-rotate-left"></i>Back to list</span>
+  <% end %>
 </p>
